@@ -1,0 +1,521 @@
+\documentclass[a4paper,11pt,titlepage,singlespacing]{article}
+\usepackage[T1]{fontenc} 
+\usepackage[utf8]{inputenc}
+\usepackage[brazilian]{babel}
+
+\usepackage{amsmath}
+\usepackage{indentfirst}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol,lipsum}
+\usepackage[bottom=2cm,top=2cm,left=2cm,right=2cm]{geometry}
+%\usepackage{color}
+\usepackage{cancel}
+\usepackage{soulutf8}
+\usepackage{color}
+
+\usepackage[easyscsl]{kpfonts}
+\usepackage[T1]{fontenc}
+
+\newcommand\todo[1]{\textcolor{red}{#1}}
+
+
+
+
+\begin{document}
+
+% % % % % % % % % CAPA % % % % % % % % % %
+\begin{titlepage}
+	\begin{center}
+		\large{Universidade Estadual de Campinas}\\
+		\large{Faculdade de Engenharia Elétrica e de Computação}\\ 
+		\large{Departamento de Engenharia de Computação e Automação Industrial}\\ 
+        \vspace{115pt}
+        %\textbf{\Large{Sistema de realidade virtual para apresentação de conteúdo na língua de sinais brasileira}}\\
+        \huge\textit{A voz na letra: \\ avaliação de representações visuais \\ de prosódia em tipografia}\\
+        
+	\end{center}
+	\vspace{95pt}
+	\begin{flushleft}
+        \large{\textbf{Pesquisadores Responsáveis:}}\\
+        Profa. Dra. Paula Dornhofer Paro Costa (Orientadora)\\	
+        Caluã de Lacerda Pataca (Mestrando)\\
+        
+        
+        \vspace{15pt}
+        \large{\textbf{Finalidade:} \\Tese de Mestrado}\\
+        \vspace{15pt}
+        \large{\textbf{Local:} \\
+        Universidade Estadual de Campinas (Unicamp)
+        \\Faculdade de Engenharia Elétrica e de Computação (FEEC)}\\
+        Depto. de Engenharia de Computação e Automação Industrial (DCA)\\
+        (e ambiente web?)
+        \vspace{15pt}        
+	\end{flushleft}
+	\vspace{3,5cm}
+	\begin{center}
+	 Data de Apresentação: Março, 2019
+	\end{center}
+
+
+\end{titlepage}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+% % % % % % % % % PRIMEIRA PÁGINA % % % % % % % % % % % % % % % % %
+\begin{titlepage}
+%\vspace{2cm}
+\begin{center}
+\Large{\textbf{Dados dos Pesquisadores}}\\
+\end{center}
+
+\vspace{10pt}
+\begin{flushleft}
+\large{\textbf{Nome}: Paula Dornhofer Paro Costa}\\
+\large{\textbf{Função:} Professora}\\
+\large{\textbf{Local de Trabalho:} Faculdade de Eng. Elétrica e de Computação (FEEC), Depto. de Eng. de Computação e Automação Industrial (DCA)}\\
+\large{\textbf{Endereço:} \\Av. Albert Einstein, 400, Cidade Universitária ``Zeferino Vaz'', Distrito de Barão Geraldo, Campinas-SP, CEP 13083-852}\\
+\large{\textbf{Telefone de Contato:} (19) 3521-0246 }\\
+\large{\textbf{Currículo Lattes:} \url{http://lattes.cnpq.br/4518009815956207} }\\
+\end{flushleft}
+
+\vspace{10pt}
+
+\begin{flushleft}
+\large{\textbf{Nome}: Caluã de Lacerda Pataca }\\
+\large{\textbf{Função:} Aluno de Mestrado}\\
+\large{\textbf{Local de Trabalho:} Faculdade de Eng. Elétrica e de Computação (FEEC), Depto. de Eng. de Computação e Automação Industrial (DCA)}\\
+\large{\textbf{Endereço:} \\Av. Albert Einstein, 400, Cidade Universitária ``Zeferino Vaz'', Distrito de Barão Geraldo, Campinas-SP, CEP 13083-852}\\
+\large{\textbf{Telefone de Contato:} (19) 99289-1963 }\\
+\large{\textbf{Currículo Lattes:} \url{http://lattes.cnpq.br/9013966339541270} }\\
+\end{flushleft}
+\vspace{10pt}
+
+\vspace{10pt}
+
+\end{titlepage}
+
+\newpage
+
+\abstract
+
+\noindent A~leitura fluente se dá quando o leitor consegue relacionar internamente letras e símbolos com os sons da língua, que ele em geral já traz consigo, em uma espécie de \textit{fala} interna. Em certos contextos esse processo funciona mal — algumas crianças em processo de alfabetização penam para se tornar leitoras fluentes, falantes de língua estrangeira nem sempre mapeiam bem som a letra, surdos não têm as referências sonoras etc. Nosso projeto se insere no rol de pesquisas em tecnologia tipográfica que visam manipular a forma do texto de modo a complementar o conteúdo explícito na escrita com aspectos presentes na fala, investigando os impactos dessas intervenções sobre a leitura. Especificamente, construirá um algoritmo computacional que abstraia características acústicas da fala para mapeá-las visualmente em formas tipográficas, imbuindo no texto elementos expressivos da voz, em especial aqueles relacionados à emoção. Nossa hipótese é que na leitura de um texto composto com essa tipografia modulada pela voz haverá um aumento em medidas subjetivas como \textit{transporte} (perceber-se ``dentro'' da obra), \textit{identificação com as personagens} (empatia do espectador para com as personagens) e \textit{realismo percebido} (quão plausível parece ser uma narrativa). Juntas, essas medidas indicam a \textit{imersão} do leitor em uma dada obra. 
+
+A avaliação se dará em ambiente \textsc{web} e compreende duas etapas. Na primeira, os participantes serão expostos a gravações contendo falas de atores e, ao mesmo tempo, a textos com as transcrições dessas falas e em cujas formas foi feita a manipulação da tipografia por nosso algoritmo de extração e representação de prosódia. Espera-se então que o participante relacione o áudio a essas manipulações no texto. Na segunda etapa, haverá um questionário online com perguntas objetivas e discursivas que buscarão mensurar o impacto dessas manipulações no texto sobre a percepção subjetiva de seu conteúdo.
+
+% O projeto envolve o estudo de apresentação de conteúdo em Língua de Sinais Brasileira, referente ao projeto TALES (Tecnologia Assistiva de Leitura para Surdos), desenvolvido em colaboração entre a Faculdade de Engenharia Elétrica e de Computação (FEEC), o Centro de Estudos e Pesquisas em Reabilitação Prof. Dr. Gabriel Porto (CEPRE) e o Instituto de Estudos da Linguagem (IEL), da Universidade Estadual de Campinas (Unicamp). O projeto tem como objetivo desenvolver sistema tradutor Português-Libras, por meio da tecnologia de um avatar sinalizador. Para atingir este objetivo, uma das etapas do projeto envolve a captura de conteúdo em Libras, sinalizado por surdos, utilizando a tecnologia de captura de movimento. Após a parametrização do material capturado novos conteúdos podem ser apresentados por um humano virtual animado, ou avatar. Dentre os diferentes desafios encontrados neste processo, as diferentes proporções entre o intérprete e o avatar podem acarretar em imperfeições na transferência dos movimentos capturados para o avatar, que devem ser ajustadas após a captura (ajuste pós-captura). O presente estudo tem por objetivo avaliar se a abordagem de ajustes implementada até o momento impacta a inteligibilidade da sinalização. Além disso, o estudo também explorará se o uso de sistema de realidade virtual para a visualização do avatar apresenta ganhos de inteligibilidade para o surdo.
+% 
+% A avaliação é constituída de duas partes principais: na primeira etapa, os participantes assistirão um conjunto de animações sinalizadas por um avatar sem os ajustes de movimento pós-captura e, em seguida, o mesmo conteúdo será apresentado por meio de animações com os ajustes de movimento pós-captura. Nesta etapa, as apresentações serão realizadas em um monitor convencional. Na segunda etapa, as animações serão apresentadas utilizando o recurso de realidade virtual (RV) através do dispositivo Oculus Rift (óculos de RV). Também nesta etapa, será apresentado um conjunto de animações sem os ajustes de movimentos pós-captura, seguida da apresentação do mesmo conteúdo com os ajustes. Ao final de ambas as etapas, os participantes serão entrevistados a fim de se coletar opiniões sobre o uso da tecnologia de avatar sinalizador.
+\newpage
+
+
+\thispagestyle{empty}
+\newpage
+
+
+\newpage
+
+\section*{Relevância Social}
+
+\noindent De acordo com o Censo Demográfico de 2010 \cite{censo2010}, quase 9,7 milhões de cidadãos Brasileiros possuem alguma perda auditiva permanente. Há evidências empíricas de que para crianças surdas e alfabetizadas, a presença de \textit{closed captions} em programas de televisão se traduz em um entendimento mais aprofundado do conteúdo, em especial em relação a seu conteúdo \textit{afetivo}. %   Murphy-Berman  e  Whobrey  (1983) 
+
+Em cima dessa constatação emerge que aperfeiçoamentos nas tecnologias de representação de texto, em especial através de técnicas que busquem representar qualidades expressivas exclusivamente presentes no registro sonoro — e, assim, pouco acessíveis à população com deficiências auditivas — podem aumentar a acessibilidade e fruição de mídias audiovisuais.
+
+Mas os benefícios podem ser mais amplos: há também vasta literatura documentando indícios empíricos de que as \textit{closed captions} trazem benefícios de compreensão, atenção e memória para diversos outros públicos: crianças, adultos e idosos; leitores experientes ou em fase de aprendizado; falantes ou não da língua em questão; etc. Assim, aperfeiçoamentos nessas legendas podem vir a ter benefícios de amplo impacto.
+% Gernsbascher 2015
+
+\todo{Paula, uma questão aqui: estou falando da possível importância do estudo para a população surda, mas *não* vou testar com surdos. Isso você acha que é um problema? Minha lógica, que pode ou não ter ficado clara no texto, é que as legendas são boas para qualquer público, o que significa que podemos testar com público em geral a princípio. }
+
+
+\newpage
+
+
+\thispagestyle{empty}
+\newpage
+\pagenumbering{arabic}
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % %
+
+\renewcommand{\contentsname}{Sumário}
+\tableofcontents
+
+\newpage
+
+%%%%%%%%%%
+\section{Introdução}
+
+Pessoas com deficiência auditiva severa, em especial aquelas que nasceram surdas ou que não foram alfabetizadas antes de adquirir a deficiência, sofrem dificuldades no acesso ao conteúdo escrito e falado, desde livros até conteúdo multimídia digital. Apesar da educação bilíngue para surdos ser um direito civil suportado pelo Plano Nacional de Educação, materiais escolares geralmente estão em Português escrito, considerada a segunda língua de pessoas com surdez, e faltam intérpretes nas salas de aula para que os alunos possam acompanhar o conteúdo apresentado pelo professor. Como apontado por Nader \cite{nader}, pessoas surdas possuem plena capacidade cognitiva, contudo qualquer indivíduo, com deficiência ou não, terá seu desenvolvimento cognitivo comprometido na ausência de uma língua.
+
+O projeto TALES busca melhorar a acessibilidade dos alunos surdos ao material escrito e ajudá-los a dominar o Português como segunda língua através de um sistema automático de tradução Português-Libras. Para alcançar este objetivo, o projeto propõe que o conteúdo em Libras%, as movimentações corporais e faciais, 
+seja reproduzido por um agente virtual, ou avatar, ou seja, uma representação digital do ser humano. A animação do avatar se dá pela interpretação de arquivos de textos que especificam a sequência de sinais a ser realizado. Esse método possui algumas vantagens sobre a gravação em vídeo tradicional: (a) arquivos de textos não são volumosos o que reduz os custos de transmissão e armazenamento; (b) alterar a sequência de sinais a ser realizada não implica em regravação de segmentos inteiros de vídeo; (c) é possível gerar conteúdo em tempo real, isto é, tradução simultânea e, (d) o usuário tem controle sobre o ponto de vista durante a apresentação, permitindo que o mesmo possa observar melhor algum detalhe, algo impossível na reprodução de vídeos tradicionais.
+
+No contexto deste projeto, um livro de ciências para crianças do terceiro ano do Ensino Fundamental I foi traduzido para Libras. Cada frase e/ou cada sinal resultante do processo de tradução, suas posições dos braços, mãos e dedos, foram gravados utilizando equipamento especializado de captura de movimentos (MoCap). Essa tecnologia permite registrar ao longo do tempo as posições de sensores fixados nas roupas de um indivíduo. Esses dados são transferidos para o computador e utilizados para animar o avatar, definindo as posições dos membros do agente virtual em cada instante. A captura de movimentos permite obter informações direto de um especialista. No caso do projeto TALES, todos os atores das capturas foram indivíduos surdos que têm Libras como primeira língua. %Isto caracteriza um diferencial deste projeto, que resulta numa reprodução realistaresultando numa animação mais realista.% e mais próxima da sinalização rápida do que ajustar as posições do corpo e mãos do avatar manualmente a cada instante. 
+
+Se o surdo e o avatar não possuem corpos de proporções semelhantes, ou se foi capturado movimentos de vários intérpretes para apenas um avatar, as animações podem apresentar algumas falhas ou distorções resultantes da transferência dos movimentos capturados para o esqueleto único do avatar. Em muitos casos, o pesquisador precisa observar os movimentos transferidos para o avatar e certificar-se que exista equivalência com os movimentos do surdo sinalizador. Em caso negativo, é necessário ajustar as posições e ângulos dos membros do avatar para corrigir as diferenças. Neste documento, este processo é referenciado como ajuste pós-captura.%, dadas as limitações anatômicas do corpo humano. %Esse tipo de ajuste pós-captura de movimentos é chamado de cinemática direta.
+
+Um dos principais objetivos do projeto TALES é a obtenção de elevados níveis de inteligibilidade por surdos. Considerando-se uma sequência de sinais, o usuário do sistema deve ser capaz de entender cada sinal individualmente e o sentido da frase como um todo. Nessa pesquisa pretende-se avaliar a compreensão dos sinais reproduzidos pelo avatar com e sem os ajustes pós-captura. Além disso, é proposto o desenvolvimento e avaliação de um sistema em realidade virtual para a apresentação do conteúdo em Libras. Realidade virtual é um paradigma de interface baseado em um mundo tridimensional gerado por computador \cite{bryson_virtual_1996}. 
+%A imersão proporcionada pela realidade virtual, a sensação de fazer parte do mundo virtual, depende de fatores como alta taxa de renderização das imagens, visão estereoscópica e sensibilidade ao movimento da cabeça do usuário. 
+Este trabalho propõe investigar se a imersão oferecida pela realidade virtual, contribui para um maior nível de inteligibilidade da sinalização em Libras em comparação com a sinalização observada em monitores convencionais.
+
+
+
+%%%%%%%%%%
+\section{Objetivos}
+
+\noindent Este projeto tem como objetivo propor, implementar e avaliar um modelo de mapeamento de características acústicas da voz, em especial aquelas relacionadas à expressão da prosódia, para modulações visuais em uma família tipográfica. 
+São objetivos específicos do projeto:
+\begin{itemize}
+    \item avaliar se essas modulações permitem ao leitor inferir a presença de emoções no áudio que não estejam explicitamente presentes no texto;
+    \item apurar que efeitos essa abordagem pode ter na imersão de um espectador que assiste a um filme em cujas legendas foram aplicadas essa modulações, calculadas a partir de propriedades acústicas extraídas da fala dos atores.
+\end{itemize} 
+
+
+
+% O objetivo principal desta pesquisa é avaliar a inteligibilidade de conteúdo sinalizado em Libras por um avatar, apresentado aos participantes da pesquisa.
+
+% São objetivos específicos do projeto:
+% \begin{itemize}
+% \item avaliação da inteligibilidade de sinalizações em Libras pelo avatar com e sem ajustes pós-captura;
+% \item avaliação da inteligibilidade de sinalizações em Libras pelo avatar em monitor convencional versus o ambiente de realidade virtual.
+% \end{itemize}
+
+%%%%%%%%%%
+\section{Hipóteses}
+
+A primeira hipótese é que a relação entre o áudio da voz e suas correspodentes modificações visuais na tipografia serão intuitivas a ponto de que um participante qualquer, não tendo tido treinamento prévio, conseguirá identificá-las   
+
+% A primeira hipótese deste projeto de pesquisa é que a inteligibilidade dos sinais é maior após ajustes pós-captura, pois ela visa corrigir possíveis distorções causadas pelas diferentes proporções corporais do ator e do avatar. Acredita-se que essas distorções dificultem ou até mesmo impossibilitem o entendimento do sinal apresentado.
+
+% A segunda hipótese a ser testada é a maior inteligibilidade das animações em ambiente de realidade virtual, comparada a monitores convencionais, devido a sensação de imersão do usuário. Essa sensação pode ser alcançada através da visão estereoscópica, geração de imagens em tempo real e responsividade aos movimentos da cabeça do usuário.
+
+%%%%%%%%%%
+\section{Local de Realização da Pesquisa}
+As avaliações serão realizadas nas dependências do CEPRE em horários previamente agendados de comum acordo entre os pesquisadores responsáveis e o participante voluntário.
+
+Os participantes serão informados durante o recrutamento e explicitamente via Termo de Consentimento Livre e Esclarecido (TCLE) que o projeto não arcará com eventuais custos de deslocamento até o local da avaliação. Os agendamentos serão realizados de modo que coincidam com dia e horários de atendimento usual dos participantes pelo CEPRE.
+
+%As avaliações podem ser realizadas em qualquer instalação onde possam ser instalados um computador para apresentação do conteúdo a ser visualizado pelos participantes. 
+A sala onde será realizada os testes pode ser caracterizada como uma sala contendo computador, monitor e cadeiras e, no momento da realização dos testes estará dedicada à avaliação, a fim de evitar distrações para os participantes e garantir a privacidade dos mesmos durante a avaliação.
+
+%%%%%%%%%%
+\section{População a ser estudada}
+
+Serão realizadas chamadas de recrutamento para indivíduos surdos com escolaridade entre Ensino Fundamental I a Ensino Médio, fluentes em Libras.
+
+
+
+% Devido ao conteúdo capturado ser originário de um livro de ciências voltado para crianças de terceiro do Ensino Fundamental I (crianças de aproximadamente 8-9 anos de idade), serão realizadas chamadas de recrutamento especiais para essa faixa etária.
+
+% No entanto, sabendo-se das possíveis restrições de acesso a essa população, serão realizadas também chamadas de recrutamento para adolescentes e crianças e jovens entre 10 e 18 anos, bem como indivíduos adultos acima de 18 anos.
+
+% O foco da pesquisa será a população de indivíduos surdos ou com perda auditiva profunda, fluentes em Libras. No entanto, sabendo-se das possíveis dificuldades no recrutamento de indivíduos com estas características, serão também aceitos como participantes da avaliação indivíduos com implantes cocleares e indíviduos, em particular crianças, que ainda não estejam em grau avançado de fluência em Libras.
+
+Para fins de avaliações comparativas, intérpretes ouvintes proficientes na compreensão de Libras também serão convidados a participar.
+
+%Os protocolos de avaliação serão idênticos para todos os grupos mencionados.
+
+
+
+%A população será dividida em duas categorias, uma com indivíduos adultos maiores de 18 anos, ouvintes e fluentes em Libras. A segunda com indivíduos adultos maiores de 18 anos com surdez ou perda auditiva profunda, nativos em Libras.
+
+
+
+%%%%%%%%%%
+\section{Garantias éticas aos participantes da pesquisa}
+A metodologia empregada pelo estudo e seus procedimentos estarão descritos no Termo de Consentimento Livre e Esclarecido (TCLE), em linguagem clara e acessível, o qual será apresentado a cada participante e/ou seu responsável legal. A anuência aos termos apresentados será registrada por meio da assinatura o termo em duas vias, sendo que uma \colorbox{yellow}{via}
+%cópia
+ficará em mãos dos pesquisadores e a outra com o participante e/ou seu responsável legal.
+
+No caso de participantes menores de idade, o TCLE deverá ser preenchido e assinado pelo seu representante legal e será apresentado um Termo de Assentimento em linguagem acessível para os menores, por meio do qual os participantes poderão registrar sua anuência, sem prejuízo do consentimento de seus representantes legais.
+Será garantida a presença de um intérprete de Libras em todas as sessões de avaliação a fim de garantir que os participantes surdos possam tirar todas as suas dúvidas em relação à avaliação.
+
+Uma vez que as sessões serão gravadas, o participante será convidado a ceder o uso de sua imagem para fins exclusivos de divulgação científica. Esta cessão de direito de uso de imagem será opcional e será feita em formulário próprio a ser assinado em duas vias pelo participante da pesquisa e/ou seu representante legal. Os participantes, em hipótese nenhuma, serão constrangidos a cederem o direito de uso de imagem, uma vez que ela é opcional.
+
+Todas as imagens coletadas durante a avaliação ficarão armazenadas em máquinas de acesso restrito pelos pesquisadores responsáveis, em ambiente seguro e controlado.
+
+%Será dada também a opção fornecido também o termo de cessão de imagem, para que o voluntário autorize a divulgação de sua imagem no ambiente de pesquisa. As imagens coletadas ficarão armazenadas em ambiente seguro e controlado, onde somente os pesquisadores responsáveis terão acesso.
+
+%%%%%%%%%%
+
+
+%%%%%%%%%%
+\section{Metodologia Proposta}
+
+% Configuração do local
+%Toda a sessão será em uma sala no Laboratório do Departamento de Engenharia de Computação e Automação Industrial (LCA). O desenvolvedor estará no local, contudo não será apresentado para que não haja influência no julgamento dos participantes. A sala será equipada com uma câmera de filmagem, um computador conectado aos equipamentos 2D e de realidade virtual e uma cadeira onde o participante ficará sentado durante a sessão.
+
+A sala de avaliação será equipada com duas câmeras de filmagem, um computador conectado ao monitor convencional (2D), ao óculos de realidade virtual e uma cadeira onde o participante ficará sentado durante a sessão.
+
+Todas as sessões serão acompanhadas por um dos pesquisadores responsáveis e um intérprete de Libras.
+
+O protocolo de avaliação proposto prevê que, no início de cada sessão, haverá uma breve explicação em Libras de como será realizado o processo de avaliação das animações/vídeo.
+
+A avaliação será dividida em três etapas, descritas a seguir.
+
+\begin{itemize}
+\item \textbf{Visualização do Avatar em Monitor Convencional:} os participantes assistirão um conjunto de animações sinalizadas por um avatar sem os ajustes pós-captura e, em seguida, o mesmo conteúdo será apresentado com os ajustes de movimento pós-captura. Serão apresentadas, em ordem aleatória, cerca de 10 animações de curta duração (2 a 5 segundos). Após a visualização de cada animação o participante será questionado pelo intérprete de Libras:
+\begin{itemize}
+\item O que você entendeu da frase?
+\item Quais sinais você identificou?
+\end{itemize}
+As respostas do participante serão filmadas para análise posterior.
+
+\item \textbf{Visualização do Avatar em Realidade Virtual:} 
+Na segunda etapa, as animações serão apresentadas utilizando o recurso de realidade virtual (RV) através do dispositivo Oculus Rift (óculos de RV). 
+Inicialmente, haverá um ajuste dos óculos à face do participante, garantindo que o mesmo esteja se sentindo confortável e esteja visualizando adequadamente o ambiente virtual. Após os ajustes, será apresentado um conjunto de animações sem os ajustes de movimentos pós-captura, seguida da apresentação do mesmo conteúdo com os ajustes. Serão apresentadas, em ordem aleatória, cerca de 10 animações de curta duração (2 a 5 segundos).
+Após a visualização de cada animação, o participante será questionado pelo intérprete de Libras:
+\begin{itemize}
+\item O que você entendeu da frase?
+\item Quais sinais você identificou?
+\end{itemize}
+As respostas do participante serão filmadas para análise posterior.
+
+\item \textbf{Entrevista Final:} Após as duas etapas anteriores será estabelecido um diálogo final com o participante que procurará avaliar sua opinião em relação às duas tecnologias, diferenças na experiência e possíveis desconfortos. As respostas do participante serão filmadas para análise posterior.
+
+\end{itemize}
+
+As animações são frases sinalizadas em Libras traduzidas do livro de ciências do Ensino Fundamental I. As frases das duas primeiras etapas serão diferentes, além disso, para cada participante, o conjunto de frases será escolhido aleatoriamente.
+
+
+
+% é constituída de duas partes: na primeira etapa, os participantes assistirão um conjunto de animações sinalizadas por um avatar sem os ajustes de movimento pós-captura e, em seguida, o mesmo conteúdo será apresentado por meio de animações com os ajustes de movimento pós-captura. Nesta etapa, as apresentações serão realizadas em um monitor convencional. 
+
+
+
+% Na segunda etapa, as animações serão apresentadas utilizando o recurso de realidade virtual (RV) através do dispositivo Oculus Rift (óculos de RV). Também nesta etapa, será apresentado um conjunto de animações sem os ajustes de movimentos pós-captura, seguida da apresentação do mesmo conteúdo com os ajustes. 
+
+% Após cada animação, o participante responderá as perguntas:
+
+
+
+% Ao final da sessão será feita uma entrevista com o participante, quando será registrada sua opinião em relação as duas tecnologias, diferenças na experiência, possíveis desconfortos, entre outros.
+
+
+
+
+
+
+% Será explicado, haverá intérprete, será filmado
+O protocolo de avaliação proposto prevê que, no início de cada sessão, haverá uma breve explicação em Libras de como será realizado o processo de avaliação das animações/vídeo.%, explicando os detalhes para evitar possíveis dúvidas durante a sessão. 
+%Para os participantes surdos a descrição do estudo e as perguntas dos questionários serão feitas por um intérprete. A sessão será filmada para registrar as respostas em Libras.
+
+%\subsection{Método a ser utilizado}
+% Geral
+% A metodologia proposta prevê a análise de questionários respondidos pelos participantes após a apresentação de cada animação. Além disso, haverá um questionário ao término da sessão para comparação entre os recursos 2D (monitor convencional) e realidade virtual. Como a população estudada está dividida em duas categorias, ouvintes e surdos, os resultados para cada uma serão analisados separadamente.
+
+
+
+
+
+%\textcolor{red}{Na sessão com participantes surdos terá um intérprete. E no caso dos ouvintes?}
+
+% Likert
+%As opções de respostas, concordância ou não para cada frase, serão:
+%\begin{enumerate}
+%\item Discordo totalmente
+%\item Discordo parcialmente
+%\item Indiferente
+%\item Concordo parcialmente
+%\item Concordo totalmente
+%\end{enumerate}
+
+% Perguntas
+%As perguntas dos questionários da primeira etapa, onde será avaliado os ajustes pós captura de movimentos utilizando cinemática direta, serão em escala Likert referentes a compreensão, corretude e dificuldade do sinal em Libras apresentado. Na segunda etapa o questionário, também em escala Likert, será referente à tecnologia utilizada, sua aceitação pelo participante e sua inteligibilidade.
+
+%Na primeira etapa do estudo o participante deverá avaliar, após cada animação, as frases:
+%\begin{itemize}
+%\item A gramática em Libras está correta
+%\item O sinal foi facilmente entendido
+%\item Os movimentos do avatar são naturais
+%\end{itemize}
+
+%Após a exibição das animações em ambas tecnologias, 2D e realidade virtual, o participante avaliará sua concordância com as frases:
+%\begin{itemize}
+%\item O equipamento estava confortável
+%\item O avatar sinalizador estava bem focado
+%\item O avatar sinalizador estava a uma distância boa
+%\item Eu sofri tontura, náusea ou dor de cabeça
+%\item A realidade virtual contribuiu para o entendimento dos sinais
+%\item \textcolor{red}{Eu utilizaria novamente RV? Eu preferi RV?}
+%\end{itemize}
+
+
+
+\subsection{Plano de Recrutamento}
+
+Indivíduos surdos que desenvolvem atividades no CEPRE serão convidados individualmente a participarem da pesquisa e serão esclarecidos sobre as justificativas e objetivos da pesquisa, procedimentos, riscos e benefícios, o sigilo e a privacidade de suas informações e outras informações que constarão do Termo de Consentimento Livre e Esclarecido. No recrutamento será esclarecido que a participação é voluntária e que não haverá impacto no atendimento pelo CEPRE caso o convidado decida não participar.
+
+
+% O recrutamento será realizado entre a população surda atendida pelo CEPRE  o contato será através dos profissionais que as atendem. Solicitaremos a divulgação do estudo por mensagem de e-mail.
+
+% Recrutaremos também pessoas ouvintes e fluentes em Libras por mensagem de e-mail e divulgação em redes sociais direcionadas a alunos de graduação, pós-graduação e funcionários da Unicamp.
+
+% Não serão utilizados cartazes.
+
+% A mensagem de recrutamento seguirá o seguinte modelo:
+
+% ``Prezados(as),
+
+% Gostaríamos de contar com seu importante apoio em nosso projeto de pesquisa que visa avaliar a compreensibilidade de sinais em Libras reproduzidos por um humano digital em sistema de realidade virtual.
+
+% Para o desenvolvimento do projeto, o participante assistirá um conjunto de sinais em Libras usando um monitor convencional e um equipamento de realidade virtual. Após cada animação o indivíduo será questionado sobre a compreensão do sinal.
+
+% Por este motivo, estamos recrutando voluntários para participação no estudo.
+% \begin{itemize}
+% \item A apresentação das animações e os questionários serão realizados no Laboratório do Departamento de Engenharia de Computação e Automação Industrial (LCA), localizado na Faculdade de Engenharia Elétrica e de Computação (FEEC) no campus da Unicamp em Campinas.
+% \item Podem participar qualquer indivíduo acima de 18 anos que sejam: (1) surdos ou possuam perda auditiva profunda, nativos em Libras; (2) ouvintes, fluentes em Libras;
+% \item Serão apresentados 24 sinais em Libras, divididos igualmente entre monitores convencionais e equipamentos de realidade virtual, cada animação mais a resposta do questionário duram aproximadamente 1 minuto;
+% \item Caso necessário, haverá um interprete para acompanhá-lo durante sessão.
+% \end{itemize}
+
+% Para obter informações adicionais ou informar seu desejo de participar da pesquisa, solicitamos que entre em contato com a pesquisadora responsável, por e-mail ou telefone:
+
+
+% Profa. Dra. Paula Dornhofer Paro Costa
+
+% paula@fee.unicamp.br
+
+% Tel.: (19) 3521-0246
+
+% Depto. de Eng. de Computação e Automação Industrial (DCA)
+
+% Faculdade de Eng. Elétrica e de Computação (FEEC)''
+
+
+%%%%%%%%%%
+\section{Cronograma}
+\hl{O projeto tem previsão de duração de 5 meses com início previsto após a aprovação do projeto no Comitê de Ética em Pesquisa, seguindo um plano de trabalho divido nas etapas apresentadas na} Tabela~\ref{table1}, \hl{conforme cronograma apresentado.}
+
+% Please add the following required packages to your document preamble:
+% \usepackage{graphicx}
+\begin{table}[htbp]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|c|c|c|ll}
+\cline{1-3}
+\textbf{Descrição Atividade} & \textbf{Período Planejado} & \textbf{Observações} &  &  \\ \cline{1-3}
+\begin{tabular}[c]{@{}c@{}}Desenvolvimento do \\ Aplicativo 2D e VR\end{tabular} & 02/10/2017 a 27/10/2017 & \begin{tabular}[c]{@{}c@{}}Esta etapa refere-se a desenvolvimento \\ de software e não envolve coleta de dados.\end{tabular} &  &  \\ \cline{1-3}
+Recrutamento & 06/11/2017 a 10/11/2017 & \begin{tabular}[c]{@{}c@{}}Etapa de recrutamento dos \\ participantes da pesquisa.\end{tabular} &  &  \\ \cline{1-3}
+Execução do Estudo & 13/11/2017 a 22/12/2017 & \begin{tabular}[c]{@{}c@{}}Período de realização \\ das seções de avaliação.\end{tabular} &  &  \\ \cline{1-3}
+Análise dos Resultados & 26/12/2017 a 16/01/2017 & \begin{tabular}[c]{@{}c@{}}Etapa de compilação \\ e análise dos resultados.\end{tabular} &  &  \\ \cline{1-3}
+Publicação do Artigo & 17/01/2017 a 14/02/2017 & \begin{tabular}[c]{@{}c@{}}Etapa de registro dos resultados obtidos e\\ e escrita de artigo para divulgação dos \\ principais resultados.\end{tabular} &  &  \\ \cline{1-3}
+\end{tabular}%
+}
+\caption{Cronograma do Projeto}
+\label{table1}
+\end{table}
+
+
+% \begin{itemize}
+% \item \hl{\textbf{Desenvolvimento do aplicativo para exibição das animações em realidade virtual e em monitor convencional (4 semanas)}}
+% \item \textbf{Recrutamento de participantes (1 semana)}
+% \item \textbf{Execução do estudo (7 semanas)}
+% \item \textbf{Avaliação e análise dos resultados (4 semanas)}
+% \item \textbf{Publicação de resultados por artigo científico (4 semanas)}
+% \end{itemize}
+O recrutamento para a participação na pesquisa só será iniciada efetivamente após aprovação do comitê de ética.
+
+%%%%%%%%%%
+\section{Orçamento}
+O recursos necessários para a realização da pesquisa tais como equipamento de realidade virtual e monitor convencional, serão emprestados da Faculdade de Engenharia Elétrica e de Computação.
+Porém teremos despesas suplementares referente a pesquisa que estão detalhadas abaixo:
+
+\begin{table}[h]
+\caption{Detalhamento do Orçamento}
+\centering
+\vspace{0.5cm}
+\begin{tabular}{l|r}
+Identificação do Orçamento & Valor em Reais (R\$) \\
+\hline 
+Água        & 20,00 \\
+Impressão de Instruções e Termos  & 15,00 \\
+Fita adesiva & 10,00 \\
+Pilhas & 20,00 \\
+\hline 
+Total & 65,00
+\end{tabular}
+\end{table}
+
+%%%%%%%%%%
+\section{Critérios de inclusão e exclusão dos participantes da pesquisa}
+
+Os participantes serão dividos em dois grupos: surdos e ouvintes proficientes em Libras.
+
+Referente à categoria dos ouvintes, poderá participar da pesquisa aquele que:
+
+\begin{itemize}
+\item for ouvinte;
+\item possuir escolaridade superior a Ensino Fundamental I;
+\item possuir proficiência na compreensão de Libras.
+\end{itemize}
+
+Os critérios de inclusão para participantes surdos:
+
+\begin{itemize}
+\item possuir escolaridade entre Ensino Fundamental I a Ensino Médio;
+\item ser surdo ou possuir perda auditiva profunda;
+\item ser nativo ou fluente em Libras.
+\end{itemize}
+
+Serão excluídos deste estudo indivíduos:
+
+\begin{itemize}
+\item indivíduos em situação de vulnerabilidade como pacientes em tratamento de doenças graves ou com problemas mentais;
+\item esteja com algum tipo de debilidade no seu senso de movimento e equilíbrio (dores de cabeça, gripe, enxaquecas, ansiedade ou estar sob a influência de álcool e drogas);
+\item possua histórico de de convulsões ou epilepsia desencadeados por luzes ou padrões piscantes;
+\item possua alguma deficiência visual que impeça o reconhecimento de animações digitais.
+\end{itemize}
+
+Distúrbios ou doenças oculares como daltonismo, ametropias ou nistagmo não são critérios excludentes, mas podem dificultar a interpretação dos estímulos visuais durante a pesquisa. Serão aceitos indivíduos que utilizam ou não lentes corretivas. 
+
+O local onde os estudos serão realizados possui acesso para cadeirantes.
+
+%%%%%%%%%%
+\section{Riscos e Benefícios envolvidos na execução da pesquisa}
+Os participantes avaliarão o avatar sinalizador e responderão os questionários em uma única sessão a ser realizada no CEPRE.
+
+Todos os equipamentos utilizados neste experimento são seguros e indolores. 
+
+\colorbox{yellow}{Não há riscos previsíveis para os participantes da pesquisa.} 
+
+Contudo, em alguns casos, o usuário imerso no ambiente de realidade virtual pode desenvolver sintomas de desconforto, como tontura, náusea e dor de cabeça. 
+
+A fim de minimizar tais desconfortos, os participantes realizarão a avaliação sentados, evitando quedas em caso de tontura. Além disso, os participantes serão monitorados frequentemente e, a qualquer momento, o usuário poderá sinalizar qualquer desconforto e a avaliação será interrompida imediatamente. 
+
+Caso possíveis sintomas apresentados persistam após a interrupção da avaliação, o participante será encaminhado ao atendimento de saúde disponível no próprio CEPRE.
+
+
+Não existem benefícios previstos para os participantes da pesquisa de forma individual. Porém o resultado desta pesquisa visa auxiliar na alfabetização e aprendizagem de pessoas surdas.
+
+%%%%%%%%%%
+\section{Critérios de Encerramento ou Suspensão da Pesquisa}
+O encerramento ou suspensão de exibição das animações se dará caso o participante sofra qualquer tipo de desconforto ou decida encerrar a avaliação, sem que seja necessário nenhum motivo específico. 
+
+%%%%%%%%%%
+\section{Resultados do Estudo}
+O estudo tem como resultado final a apresentação dos resultados de compreensão do avatar sinalizador com e sem ajuste de movimento pós-captura, bem como a avaliação de inteligibilidade da tecnologia de realidade virtual em relação a monitores convencionais. Os resultados das duas categorias, surdos e ouvintes, serão analisados separadamente.
+
+%%%%%%%%%%
+\section{Divulgação dos Resultados}
+A divulgação deste estudo se dará em forma de artigo científico. Além disso, os resultados deste estudo farão parte de dissertação de mestrado na Faculdade de Engenharia Elétrica e de Computação (FEEC).
+
+%%%%%%%%%%
+\section{Requisitos Específicos do Protocolo de Pesquisa}
+Não foram identificados outros requisitos específicos do protocolo de pesquisa além dos já mencionados nas seções anteriores.
+
+\addcontentsline{toc}{section}{Referências Bibliográficas}
+
+\bibliographystyle{plain}  %% nome-ano %abnt
+\bibliography{Rodolfo.bib}
+
+
+
+\newpage
+\addcontentsline{toc}{section}{Anexo}
+%\section*{Anexo}
+
+%\subsection{Questões}
+
+\end{document}
+
+
