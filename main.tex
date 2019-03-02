@@ -101,7 +101,7 @@
 
 \noindent A~leitura fluente se dá quando o leitor consegue relacionar internamente letras e símbolos com os sons da língua, que ele em geral já traz consigo, em uma espécie de \textit{fala} interna. Em certos contextos esse processo funciona mal — algumas crianças em processo de alfabetização penam para se tornar leitoras fluentes, falantes de língua estrangeira nem sempre mapeiam bem som a letra, surdos não têm as referências sonoras etc. Nosso projeto se insere no rol de pesquisas em tecnologia tipográfica que visam manipular a forma do texto de modo a complementar o conteúdo explícito na escrita com aspectos presentes na fala, investigando os impactos dessas intervenções sobre a leitura. Especificamente, construirá um algoritmo computacional que abstraia características acústicas da fala para mapeá-las visualmente em formas tipográficas, imbuindo no texto elementos expressivos da voz, em especial aqueles relacionados à emoção. Nossa hipótese é que na leitura de um texto composto com essa tipografia modulada pela voz haverá um aumento em medidas subjetivas como \textit{transporte} (perceber-se ``dentro'' da obra), \textit{identificação com as personagens} (empatia do espectador para com as personagens) e \textit{realismo percebido} (quão plausível parece ser uma narrativa). Juntas, essas medidas indicam a \textit{imersão} do leitor em uma dada obra. 
 
-A avaliação se dará em ambiente \textsc{web} e compreende duas etapas. Na primeira, os participantes serão expostos a gravações contendo falas de atores e, ao mesmo tempo, a textos com as transcrições dessas falas e em cujas formas foi feita a manipulação da tipografia por nosso algoritmo de extração e representação de prosódia. Espera-se então que o participante relacione o áudio a essas manipulações no texto. Na segunda etapa, haverá um questionário online com perguntas objetivas e discursivas que buscarão mensurar o impacto dessas manipulações no texto sobre a percepção subjetiva de seu conteúdo.
+A avaliação se dará em ambiente web e compreende duas etapas. Na primeira, os participantes serão expostos a gravações contendo falas de atores e, ao mesmo tempo, a textos com as transcrições dessas falas e em cujas formas foi feita a manipulação da tipografia por nosso algoritmo de extração e representação de prosódia. Espera-se então que o participante relacione o áudio a essas manipulações no texto. Na segunda etapa, haverá um questionário online com perguntas objetivas e discursivas que buscarão mensurar o impacto dessas manipulações no texto sobre a percepção subjetiva de seu conteúdo.
 
 % O projeto envolve o estudo de apresentação de conteúdo em Língua de Sinais Brasileira, referente ao projeto TALES (Tecnologia Assistiva de Leitura para Surdos), desenvolvido em colaboração entre a Faculdade de Engenharia Elétrica e de Computação (FEEC), o Centro de Estudos e Pesquisas em Reabilitação Prof. Dr. Gabriel Porto (CEPRE) e o Instituto de Estudos da Linguagem (IEL), da Universidade Estadual de Campinas (Unicamp). O projeto tem como objetivo desenvolver sistema tradutor Português-Libras, por meio da tecnologia de um avatar sinalizador. Para atingir este objetivo, uma das etapas do projeto envolve a captura de conteúdo em Libras, sinalizado por surdos, utilizando a tecnologia de captura de movimento. Após a parametrização do material capturado novos conteúdos podem ser apresentados por um humano virtual animado, ou avatar. Dentre os diferentes desafios encontrados neste processo, as diferentes proporções entre o intérprete e o avatar podem acarretar em imperfeições na transferência dos movimentos capturados para o avatar, que devem ser ajustadas após a captura (ajuste pós-captura). O presente estudo tem por objetivo avaliar se a abordagem de ajustes implementada até o momento impacta a inteligibilidade da sinalização. Além disso, o estudo também explorará se o uso de sistema de realidade virtual para a visualização do avatar apresenta ganhos de inteligibilidade para o surdo.
 % 
@@ -182,7 +182,7 @@ São objetivos específicos do projeto:
 %%%%%%%%%%
 \section{Hipóteses}
 
-A primeira hipótese a ser testada é que nossa abordagem para mapear a prosódia contida na voz em modificações visuais tipográficas produzirá resultados suficientemente auto-explicativos a ponto de que um participante da avaliação, não tendo recebido treinamento prévio, consiga identificar que um dado texto corresponda a uma dada enunciação sonora do mesmo.
+\noindent A primeira hipótese a ser testada é que nossa abordagem para mapear a prosódia contida na voz em modificações visuais tipográficas produzirá resultados suficientemente auto-explicativos a ponto de que um participante da avaliação, não tendo recebido treinamento prévio, consiga identificar que um dado texto corresponda a uma dada enunciação sonora do mesmo.
 
 A segunda hipótese a ser testada é que essas modificações causarão um aumento na imersão do participante em uma dada obra audiovisual, medida através do aumento em medidas subjetivas auto-reportadas como \textit{transporte}, \textit{identificação com as personagens} e \textit{realismo percebido}.
 
@@ -192,12 +192,16 @@ A segunda hipótese a ser testada é que essas modificações causarão um aumen
 
 %%%%%%%%%%
 \section{Local de Realização da Pesquisa}
-As avaliações serão realizadas nas dependências do CEPRE em horários previamente agendados de comum acordo entre os pesquisadores responsáveis e o participante voluntário.
 
-Os participantes serão informados durante o recrutamento e explicitamente via Termo de Consentimento Livre e Esclarecido (TCLE) que o projeto não arcará com eventuais custos de deslocamento até o local da avaliação. Os agendamentos serão realizados de modo que coincidam com dia e horários de atendimento usual dos participantes pelo CEPRE.
+\noindent As avaliações serão majoritariamente realizadas em ambiente web, com um pequeno grupo de controle realizado nas dependências da \textsc{feec}. 
 
-%As avaliações podem ser realizadas em qualquer instalação onde possam ser instalados um computador para apresentação do conteúdo a ser visualizado pelos participantes. 
-A sala onde será realizada os testes pode ser caracterizada como uma sala contendo computador, monitor e cadeiras e, no momento da realização dos testes estará dedicada à avaliação, a fim de evitar distrações para os participantes e garantir a privacidade dos mesmos durante a avaliação.
+Os participantes do experimento em ambiente web terão recebido convites por e-mail contendo uma apresentação do estudo e a indicação do período em que o teste estará disponível, junto aos requisitos mínimos computacionais e regras para participação. Ficam, assim, livres para escolher local e horário que melhor lhes convir para realização do experimento.
+
+As avaliações presenciais do grupo de controle serão realizadas nas dependências do ...., na \textsc{feec}, em horários previamente agendados de comum acordo entre os pesquisadores responsáveis e o participante voluntário.
+
+Os participantes serão informados durante o recrutamento e explicitamente via Termo de Consentimento Livre e Esclarecido (\textsc{tcle}) que o projeto não arcará com eventuais custos de deslocamento até o local da avaliação. Os agendamentos serão realizados de modo que coincidam com dia e horários de atendimento usual dos participantes pelo .....
+
+A sala onde será realizada os testes pode ser caracterizada como uma sala contendo computador, monitor e cadeiras e, no momento da realização dos testes estará dedicada à avaliação a fim de evitar distrações para os participantes e garantir a privacidade dos mesmos durante a avaliação.
 
 %%%%%%%%%%
 \section{População a ser estudada}
