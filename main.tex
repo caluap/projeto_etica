@@ -14,6 +14,8 @@
 \usepackage{soulutf8}
 \usepackage{color}
 
+%%%% CALUÃ COMEÇOU A MEXER DAQUI %%%%%
+
 \usepackage[easyscsl]{kpfonts}
 \usepackage[T1]{fontenc}
 
@@ -26,6 +28,40 @@
 % \usepackage[hidelinks]{hyperref}
 \usepackage[alf,versalete]{abntex2cite}
 
+\renewcommand{\thesection}{\oldstylenums{\arabic{section}}}
+\renewcommand{\thesubsection}{\oldstylenums{\arabic{section} · \arabic{subsection}}}
+\renewcommand{\thepage}{\oldstylenums{\arabic{page}}}
+
+\renewcommand{\yearstyle}{\oldstylenums}
+
+\linespread{1.25}
+
+
+
+\setlength{\topmargin}{-0.5cm} % extra vert. space + at the top of header: 23pt -15
+\setlength{\oddsidemargin}{0.5cm} % extra spc added at the left of odd page: 0pt
+% \setlength{\evensidemargin}{1cm} % ext. spc added at the left of even pg: 59pt
+\setlength{\textheight}{23.5cm} % height of the body: 592pt
+\setlength{\textwidth}{15cm}
+\newcommand{\ignore}[1]{}
+
+
+% https://tex.stackexchange.com/questions/255167/hanging-indent-in-headings
+\usepackage{titlesec}
+\newlength\TitleOverhang
+\setlength\TitleOverhang{1.5cm}
+\newcommand\Overhang[1]{%
+  \llap{\makebox[\TitleOverhang][l]{#1}}%
+}
+\titleformat{\section}
+  {\normalfont\Large\bfseries}{\Overhang{\thesection}}{0em}{}
+\titleformat{\subsection}
+  {\normalfont\large\bfseries}{\Overhang{\thesubsection}}{0em}{}
+\titleformat{\subsubsection}
+  {\normalfont\normalsize\bfseries}{\Overhang{\thesubsubsection}}{0em}{}
+
+
+
 
 
 
@@ -37,21 +73,21 @@
 		\large{Universidade Estadual de Campinas}\\
 		\large{Faculdade de Engenharia Elétrica e de Computação}\\ 
 		\large{Departamento de Engenharia de Computação e Automação Industrial}\\ 
-        \vspace{115pt}
+        \vspace{100pt}
         %\textbf{\Large{Sistema de realidade virtual para apresentação de conteúdo na língua de sinais brasileira}}\\
         \huge\textit{A voz na letra: \\ avaliação de representações visuais \\ de prosódia em tipografia}\\
         
 	\end{center}
-	\vspace{95pt}
+	\vspace{80pt}
 	\begin{flushleft}
         \large{\textbf{Pesquisadores Responsáveis:}}\\
         Profa. Dra. Paula Dornhofer Paro Costa (Orientadora)\\	
         Caluã de Lacerda Pataca (Mestrando)\\
         
         
-        \vspace{15pt}
+        \vspace{10pt}
         \large{\textbf{Finalidade:} \\Tese de Mestrado}\\
-        \vspace{15pt}
+        \vspace{10pt}
         \large{\textbf{Local:} \\
         Universidade Estadual de Campinas (Unicamp)
         \\Faculdade de Engenharia Elétrica e de Computação (\textsc{feec})}\\
@@ -59,7 +95,7 @@
         (e ambiente web?)
         \vspace{15pt}        
 	\end{flushleft}
-	\vspace{3,5cm}
+	\vspace{3cm}
 	\begin{center}
 	 Data de Apresentação: Março, 2019
 	\end{center}
@@ -72,9 +108,9 @@
 % % % % % % % % % PRIMEIRA PÁGINA % % % % % % % % % % % % % % % % %
 \begin{titlepage}
 %\vspace{2cm}
-\begin{center}
-\Large{\textbf{Dados dos Pesquisadores}}\\
-\end{center}
+% \begin{center}
+\noindent \Large{\textbf{Dados dos Pesquisadores}}\\
+% \end{center}
 
 \vspace{10pt}
 \begin{flushleft}
@@ -342,11 +378,11 @@ Não existem benefícios previstos para os participantes da pesquisa de forma in
 
 %%%%%%%%%%
 \section{Divulgação dos Resultados}
-A divulgação deste estudo se dará em forma de artigo científico. Além disso, os resultados deste estudo farão parte de dissertação de mestrado na Faculdade de Engenharia Elétrica e de Computação (\textsc{feec}).
+\noindent A divulgação deste estudo se dará em forma de artigo científico. Além disso, os resultados deste estudo farão parte de dissertação de mestrado na Faculdade de Engenharia Elétrica e de Computação (\textsc{feec}).
 
 %%%%%%%%%%
 \section{Requisitos Específicos do Protocolo de Pesquisa}
-Não foram identificados outros requisitos específicos do protocolo de pesquisa além dos já mencionados nas seções anteriores.
+\noindent Não foram identificados outros requisitos específicos do protocolo de pesquisa além dos já mencionados nas seções anteriores.
 
 \addcontentsline{toc}{section}{Referências Bibliográficas}
 
