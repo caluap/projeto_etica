@@ -107,9 +107,6 @@
 
 A avaliação se dará em ambiente web e compreende duas etapas. Na primeira, os participantes serão expostos a gravações contendo falas de atores e, ao mesmo tempo, a textos com as transcrições dessas falas e em cujas formas foi feita a manipulação da tipografia por nosso algoritmo de extração e representação de prosódia. Espera-se então que o participante relacione o áudio a essas manipulações no texto. Na segunda etapa, haverá um questionário online com perguntas objetivas e discursivas que buscarão mensurar o impacto dessas manipulações no texto sobre a percepção subjetiva de seu conteúdo.
 
-% O projeto envolve o estudo de apresentação de conteúdo em Língua de Sinais Brasileira, referente ao projeto TALES (Tecnologia Assistiva de Leitura para Surdos), desenvolvido em colaboração entre a Faculdade de Engenharia Elétrica e de Computação (FEEC), o Centro de Estudos e Pesquisas em Reabilitação Prof. Dr. Gabriel Porto (CEPRE) e o Instituto de Estudos da Linguagem (IEL), da Universidade Estadual de Campinas (Unicamp). O projeto tem como objetivo desenvolver sistema tradutor Português-Libras, por meio da tecnologia de um avatar sinalizador. Para atingir este objetivo, uma das etapas do projeto envolve a captura de conteúdo em Libras, sinalizado por surdos, utilizando a tecnologia de captura de movimento. Após a parametrização do material capturado novos conteúdos podem ser apresentados por um humano virtual animado, ou avatar. Dentre os diferentes desafios encontrados neste processo, as diferentes proporções entre o intérprete e o avatar podem acarretar em imperfeições na transferência dos movimentos capturados para o avatar, que devem ser ajustadas após a captura (ajuste pós-captura). O presente estudo tem por objetivo avaliar se a abordagem de ajustes implementada até o momento impacta a inteligibilidade da sinalização. Além disso, o estudo também explorará se o uso de sistema de realidade virtual para a visualização do avatar apresenta ganhos de inteligibilidade para o surdo.
-% 
-% A avaliação é constituída de duas partes principais: na primeira etapa, os participantes assistirão um conjunto de animações sinalizadas por um avatar sem os ajustes de movimento pós-captura e, em seguida, o mesmo conteúdo será apresentado por meio de animações com os ajustes de movimento pós-captura. Nesta etapa, as apresentações serão realizadas em um monitor convencional. Na segunda etapa, as animações serão apresentadas utilizando o recurso de realidade virtual (RV) através do dispositivo Oculus Rift (óculos de RV). Também nesta etapa, será apresentado um conjunto de animações sem os ajustes de movimentos pós-captura, seguida da apresentação do mesmo conteúdo com os ajustes. Ao final de ambas as etapas, os participantes serão entrevistados a fim de se coletar opiniões sobre o uso da tecnologia de avatar sinalizador.
 \newpage
 
 
@@ -121,12 +118,11 @@ A avaliação se dará em ambiente web e compreende duas etapas. Na primeira, os
 
 \section*{Relevância Social}
 
-\noindent De acordo com o Censo Demográfico de 2010 \cite{censo2010}, quase 9,7 milhões de cidadãos Brasileiros possuem alguma perda auditiva permanente. Há evidências empíricas de que para crianças surdas e alfabetizadas, a presença de \textit{closed captions} em programas de televisão se traduz em um entendimento mais aprofundado do conteúdo, em especial em relação a seu conteúdo \textit{afetivo}. %   Murphy-Berman  e  Whobrey  (1983) 
+\noindent De acordo com o Censo Demográfico de 2010 \cite{censo2010}, quase 9,7 milhões de cidadãos Brasileiros possuem alguma perda auditiva permanente. Há evidências empíricas \cite{murphy-berman_impact_1983} de que para crianças surdas e alfabetizadas, a presença de \textit{closed captions} em programas de televisão se traduz em um entendimento mais aprofundado do conteúdo, em especial em relação a seu conteúdo \textit{afetivo}.
 
 Em cima dessa constatação emerge que aperfeiçoamentos nas tecnologias de representação de texto, em especial através de técnicas que busquem representar qualidades expressivas exclusivamente presentes no registro sonoro — e, assim, pouco acessíveis à população com deficiências auditivas — podem aumentar a acessibilidade e fruição de mídias audiovisuais.
 
-Mas os benefícios podem ser mais amplos: há também vasta literatura documentando indícios empíricos de que as \textit{closed captions} trazem benefícios de compreensão, atenção e memória para diversos outros públicos: crianças, adultos e idosos; leitores experientes ou em fase de aprendizado; falantes ou não da língua em questão; etc. Assim, aperfeiçoamentos nessas legendas podem vir a ter benefícios de amplo impacto.
-% Gernsbascher 2015
+Mas os benefícios podem ser mais amplos: há também vasta literatura \cite{fiske_video_2015} documentando indícios empíricos de que as \textit{closed captions} trazem benefícios de compreensão, atenção e memória para diversos outros públicos: crianças, adultos e idosos; leitores experientes ou em fase de aprendizado; falantes ou não da língua em questão; etc. Assim, aperfeiçoamentos nessas legendas podem vir a ter benefícios de amplo impacto.
 
 \todo{Paula, uma questão aqui: estou falando da possível importância do estudo para a população surda, mas *não* vou testar com surdos. Isso você acha que é um problema? Minha lógica, que pode ou não ter ficado clara no texto, é que as legendas são boas para qualquer público, o que significa que podemos testar com público em geral a princípio. }
 
@@ -237,26 +233,14 @@ Em ambos os casos, o experimento consiste no participante interagir com uma pág
     \item Para os participantes que farão o experimento sem supervisão, apresentação do Termo de Consentimento Livre e Esclarecido (\textsc{tcle}). Para prosseguir com o experimento o participante deverá declarar ter lido e estar de acordo com os termos propostos;
     \item Questionário inicial para coleta de dados demográficos — idade, sexo (opcional), grau de formação, área de trabalho e/ou estudo (opcional). Para os participantes que farão o experimento sem supervisão, nesta etapa serão também coletados automaticamente dados sobre localização de acesso e informações sobre o computador e navegador utilizados (sistema operacional, tamanho de tela, versões etc). Não serão coletadas informações que permitam recuperar a identidade do participante, cujas respostas e dados serão salvos de maneira anônima; 
     \item Início do teste com áudio e tipografia. Em cada rodada, será apresentado um áudio contendo uma fala e sua transcrição. Em alguns casos, essa transcrição terá tido o desenho de suas letras modificado de acordo com nossa abordagem de extração e representação de prosódia. Em outros casos, essas modificações não corresponderão ao áudio. O participante deverá relacionar a tipografia que corresponde ao áudio, produzindo um índice de acerto que nos indicará a efetividade de nossa abordagem;
-    \item Na segunda etapa e  e , haverá um conjunto de questões de escala de Likert, adaptadas de ***, visando mensurar medidas subjetivas como \textit{transporte} (questões como “enquanto fazia o teste da etapa anterior mantive plena consciência do ambiente em meu entorno”), \textit{identificação com as personagens} (questões como “as percepções e emoções das personagens estavam claras para mim”) e \textit{realismo percebido} (questões como “as personagens me pareceram realistas”). \todo{Paula, note que esta etapa não pensei para o primeiro teste e sim para o seguinte, com legendas. Mas eis o que me ocorreu: talvez possamos jogar umas questões de escala Likert mesmo no primeiro teste e correlacioná-las aos índices de performance dos participantes. Não responde ao nosso objetivo principal, mas não o influencia negativamente (seria ao final) e talvez traga algum elemento novo.}
+    \item Na segunda etapa e  e , haverá um conjunto de questões de escala de Likert, adaptadas de \cite{translatology}, visando mensurar medidas subjetivas como \textit{transporte} (questões como “enquanto fazia o teste da etapa anterior mantive plena consciência do ambiente em meu entorno”), \textit{identificação com as personagens} (questões como “as percepções e emoções das personagens estavam claras para mim”) e \textit{realismo percebido} (questões como “as personagens me pareceram realistas”). \todo{Paula, note que esta etapa não pensei para o primeiro teste e sim para o seguinte, com legendas. Mas eis o que me ocorreu: talvez possamos jogar umas questões de escala Likert mesmo no primeiro teste e correlacioná-las aos índices de performance dos participantes. Não responde ao nosso objetivo principal, mas não o influencia negativamente (seria ao final) e talvez traga algum elemento novo.}
 \end{itemize}
 
 Tanto no teste com quanto no sem supervisão, o participante pode abandonar o site a qualquer momento, sem prejuízo a si.
 
 \todo{Paula: não estou falando sobre o conteúdo das frases para que possa usar um vídeo no segundo experimento (o das legendas) sem ter que escolher um filme agora. Você acha isso um problema?}
+
 % As animações são frases sinalizadas em Libras traduzidas do livro de ciências do Ensino Fundamental I. As frases das duas primeiras etapas serão diferentes, além disso, para cada participante, o conjunto de frases será escolhido aleatoriamente.
-
-
-
-% @inbook{inbook,
-% author = {Kruger, Jan-Louis and Soto-Sanfiel, María and Doherty, Stephen and Ibrahim, Ronny},
-% year = {2016},
-% month = {11},
-% pages = {171-194},
-% title = {Towards a cognitive audiovisual translatology: subtitles and embodied cognition},
-% isbn = {9789027266347},
-% doi = {10.1075/btl.128.09kru}
-% }
-
 
 
 % Likert
@@ -369,7 +353,7 @@ Não foram identificados outros requisitos específicos do protocolo de pesquisa
 \addcontentsline{toc}{section}{Referências Bibliográficas}
 
 \bibliographystyle{plain}  %% nome-ano %abnt
-\bibliography{Rodolfo.bib}
+\bibliography{ref.bib}
 
 
 
