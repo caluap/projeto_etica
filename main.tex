@@ -173,7 +173,6 @@ O presente projeto propõe o aperfeiçoamento nas tecnologias de representação
 
 \thispagestyle{empty}
 \newpage
-\pagenumbering{arabic}
 
 % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
@@ -182,7 +181,9 @@ O presente projeto propõe o aperfeiçoamento nas tecnologias de representação
 
 \newpage
 
+\pagenumbering{arabic}
 %%%%%%%%%%
+
 \section{Introdução}
 
 \noindent Ler é uma habilidade cognitiva de alto nível, que exige longo período de treinamento e que envolve intenso processo neurológico. Dentre as estruturas cerebrais envolvidas no processo de leitura, é surpreendente notar que, além daquelas encarregadas do processamento de imagens, a leitura exige também o amplo emprego de estruturas que lidam com processamento de sons \cite[cap.7]{seidenberg2017}. Isso ocorre porque, mesmo quando lê silenciosamente, o leitor deduz (ou cria) em sua voz interna a musicalidade do texto, habilidade fundamentalmente relacionada à compreensão e interpretação do mesmo.
@@ -214,8 +215,8 @@ A segunda hipótese a ser testada é que essas modificações causarão um aumen
 
 
 %%%%%%%%%%
-\section{Desenho da avaliação}
-\noindent Este estudo busca avaliar a efetividade e possíveis efeitos de nossa abordagem de extração de características de prosódia na voz e representação das mesmas enquanto codificações gráficas em tipografia. Para tanto, buscaremos expor para os participantes de nossa avaliação certos textos que passaram por essas modificações em conjunto com os sons de fala que as geraram. Avaliaremos, então, quão perceptível ficou a relação entre som e imagem através de um teste de associação simples realizado no computador (e.g. “Qual imagem corresponde ao som?”). Em seguida, o participante receberá um questionário, ainda em ambiente virtual, com questões que busquem revelar aspectos relativos à imersão subjetiva no conteúdo apresentado (e.g. “De 1 a 7, com 1 sendo muito pouco e 7 sendo muito, quão claras estavam as percepções e emoções das personagens para você?”). O índice de acerto na primeira etapa (dentre todas as imagens apresentadas, em quantas o participante relacionou corretamente imagem a som?) poderá então ser usado para encontrar correlações com as medidas de imersão (respondendo a indagações como “um maior reconhecimento equivale a uma maior imersão?”).
+% \section{Desenho da avaliação}
+% \noindent Este estudo busca avaliar a efetividade e possíveis efeitos de nossa abordagem de extração de características de prosódia na voz e representação das mesmas enquanto codificações gráficas em tipografia. Para tanto, buscaremos expor para os participantes de nossa avaliação certos textos que passaram por essas modificações em conjunto com os sons de fala que as geraram. Avaliaremos, então, quão perceptível ficou a relação entre som e imagem através de um teste de associação simples realizado no computador (e.g. “Qual imagem corresponde ao som?”). Em seguida, o participante receberá um questionário, ainda em ambiente virtual, com questões que busquem revelar aspectos relativos à imersão subjetiva no conteúdo apresentado (e.g. “De 1 a 7, com 1 sendo muito pouco e 7 sendo muito, quão claras estavam as percepções e emoções das personagens para você?”). O índice de acerto na primeira etapa (dentre todas as imagens apresentadas, em quantas o participante relacionou corretamente imagem a som?) poderá então ser usado para encontrar correlações com as medidas de imersão (respondendo a indagações como “um maior reconhecimento equivale a uma maior imersão?”).
 
 %%%%%%%%%%
 \section{Local de Realização da Pesquisa}
@@ -246,7 +247,7 @@ Os dados serão salvos de maneira anônima: todas informações coletadas para d
 
 
 %%%%%%%%%%
-\section{Metodologia Proposta}
+\section{Método a ser utilizado}
 
 \noindent Como já exposto, os participantes estarão dividos em dois grupos: no \textit{Grupo Avaliado Online}, o participante realizará o em ambiente livre de acordo com a conveniência do participante, demandando apenas um computador com requisitos pré-determinados; no \textit{Grupo Avaliado em Condições Controladas}, o participante realizará a avaliação em ambiente controloado e sob supervisão dos pesquisadores.
 
@@ -357,27 +358,12 @@ Caso possíveis sintomas apresentados persistam após a interrupção da avalia�
 Não existem benefícios previstos para os participantes da pesquisa de forma individual. Porém, o resultado desta pesquisa visa trazer benefícios a todos que consomem mídias audiovisuais com \textit{closed captions} ou legendas.
 
 %%%%%%%%%%
-\section{Metodologia de Análise de dados}
-
-\noindent Todas as respostas coletadas serão importadas para o ambiente Jupyter Notebook, em cima do que serão analisadas através de scripts Python. Especificamente, usaremos ferramentas de estatística descritiva para entender como está distribuída a performance dos participantes no relacionamento entre texto e áudio. Em seguida, estes dados serão correlacionados aos diferentes dados de perfil coletados (idade, sexo, grau de formação e área de atuação), na esperança de encontrar algum possível padrão significante dentro de cada um dos grupos. Por fim, um escore será calculado em cima das respostas às perguntas de tipo ‘escala de Likert’ que, como descrito anteriormente, buscarão mapear o nível de imersão do participante com um dado conteúdo. Esse escore será correlacionado à performance de relacionamento entre áudio e texto para investigar, então, se um texto que codifique a fala conforme nossa abordagem implica em maior imersão do leitor.
-
-
-%%%%%%%%%%
 \section{Critérios de Encerramento ou Suspensão da Pesquisa}
 \noindent O encerramento ou suspensão de exibição dos áudios e textos se dará caso o participante sofra qualquer tipo de desconforto ou decida encerrar a avaliação, sem que seja necessário nenhum motivo específico. 
 
 %%%%%%%%%%
 \section{Resultados do Estudo}
 \noindent O estudo tem como resultado final a apresentação dos resultados de compreensão da associação entre áudio e modificações visuais na tipografia correspondentes, bem como de o quanto essa abordagem modifica medidas subjetivas auto-reportadas de engajamento com conteúdos audiovisuais.
-
-%%%%%%%%%%
-\section{Desfecho primário}
-\noindent Caso seja detectada de maneira significante uma alta performance no reconhecimento da relação entre texto e fala, teremos um bom ponto inicial para avançar no desenvolvimento de nossa abordagem de extração e codificação de prosódia que, em tempo, poderá vir a ter uso em diversas aplicações — o auxílio ao processo de alfabetização, o ensino de línguas estrangeiras e como tecnologia assistiva. Diferentes padrões de performance que eventualmente possam ser relacionados aos diferentes perfis de participantes analisados podem fornecer insumos sobre esses possíveis novos desenvolvimentos.
-
-
-%%%%%%%%%%
-\section{Desfecho secundário}
-\noindent Caso seja encontrada uma correlação significante entre performance no reconhecimento da relação entre texto e fala e a altos índices de imersão no conteúdo apresentado, abre-se uma possível seara para futuras explorações de tecnologias para ‘closed captions’ que, além de servir como ferramenta educativa e assistiva, pode ter impactos na qualidade da experiência de se consumir conteúdos audiovisuais.
 
 %%%%%%%%%%
 \section{Divulgação dos Resultados}
